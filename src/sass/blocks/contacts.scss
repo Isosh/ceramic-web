@@ -1,0 +1,169 @@
+@use "../base/variables.scss" as *;
+
+$tablet: 767px;
+$desktop: 1199px;
+$large: 1900px;
+
+.contact {
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+
+  @media (min-width: $large) {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 20px 0 100px;
+  }
+
+  &__title {
+    padding: 10px 0 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 32px;
+
+    @media (min-width: $tablet) {
+      font-size: 36px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    @media (min-width: $desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+    @media (min-width: $large) {
+      width: 100%;
+    }
+  }
+
+  &__main-img {
+    display: none;
+
+    @media (min-width: $desktop) {
+      display: block;
+      width: 550px;
+      height: 341px;
+      object-fit: cover;
+      box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__form {
+    position: relative;
+    width: 95%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 90px;
+
+    @media (min-width: $tablet) {
+      max-width: 700px; 
+    }
+
+    @media (min-width: $large) {
+      width: 700px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+
+    &--name, &--email {
+      @media (min-width: $tablet) {
+        width: 340px;
+      }
+    }
+  }
+
+  &__input {
+    height: 48px;
+    padding: 0 15px;
+    background: #fff;
+    border: none;
+    outline: none;
+  }
+
+  &__textarea {
+    height: 160px;
+    padding: 15px;
+    background: #fff;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  &__footer {
+  display: flex;
+  flex-direction: column;   
+  align-items: flex-start;  
+  gap: 16px;
+  padding: 16px 0;
+  }
+
+  &__checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+
+    a {
+      color: #A22DC6;
+      text-decoration: none;
+    }
+  }
+
+  &__btn {
+    height: 48px;
+    padding: 0 40px;
+    border: 1px solid #000;
+    background: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+  }
+
+
+  &__decor-icon {
+    display: none;
+
+    @media (min-width: $tablet) {
+      display: block;
+      position: absolute;
+      width: 85px;
+      height: 85px;
+      right: 0;
+      bottom: 100px;
+    }
+  }
+}

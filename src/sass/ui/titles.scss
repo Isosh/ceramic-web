@@ -1,0 +1,22 @@
+@use "/src/sass/base/mixins.scss" as *;
+
+$tablet: 767px;
+$desktop: 1199px;
+$large: 1850px;
+
+.title-h1-italic {
+	@include title;
+	font-size: 24px;
+	font-style: italic;
+}
+.title-h2 {
+    padding: 10px 0 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 32px;
+
+    @media (min-width: $tablet) {
+      font-size: 36px;
+    }
+}

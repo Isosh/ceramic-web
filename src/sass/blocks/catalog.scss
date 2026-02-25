@@ -1,0 +1,95 @@
+@use "../base/variables.scss" as *;
+
+$tablet: 767px;
+$desktop: 1199px;
+$large: 1900px;
+
+.active{
+  text-decoration: underline;
+}
+.catalog {
+  margin: auto;
+  min-height: 500px;
+  &__title{
+    margin: auto;
+    padding: 2em 0;
+    font-size: 32px;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+
+    @media (min-width: $tablet) {
+      font-size: 36px;
+    }
+    @media (min-width: $desktop) {
+      font-size: 40px;
+    }
+  }
+  &__filters{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: auto;
+    text-align: center;
+    border: 1px solid #232323;
+    max-width: 340px;
+
+    @media (min-width: $tablet) {
+      max-width: 500px;
+    }
+  }
+  &__filter{
+    border: none;
+    width: 135px;
+    margin: 0.5em;
+    background-color: white;
+    font-weight: 500;
+    font-size: 20px;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+  &__grid{
+    margin: 2em auto 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1em;
+    width: 340px;
+
+    @media (min-width: $tablet) {
+      width: 700px;
+      position: relative;
+    }
+    @media (min-width: $desktop) {
+      width: 1052px;
+    }
+    @media (min-width: $large) {
+      width: 1410px;
+    }
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-inline: 5px;
+    height: 77px;
+    border: 1px solid ;
+  }
+}
+
+@media (min-width: $tablet) {
+  .catalog {
+    &__grid::after{
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 200px;
+      height: 200px;
+      border-top: 2px solid #2f2f2f;
+      border-left: 2px solid #2f2f2f;
+    }
+  }
+}

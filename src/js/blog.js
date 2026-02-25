@@ -1,0 +1,63 @@
+const BASE_URL = "https://ceramic-api.onrender.com";
+
+async function loadPosts() {
+    const url = `${BASE_URL}/api/posts`;
+
+    const res = await fetch(url, {
+        headers: {
+            Accept: "application/json",
+        },
+    });
+    return res.json();
+}
+
+
+function renderPosts(posts) {
+    const container = document.querySelector(".blog_feed-container");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    posts.forEach((item) => {
+        container.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="blog_feed__element">
+                <div class="blog_feed__element__header">
+
+                    <img src="${BASE_URL}${item.image}" 
+                         alt="${item.title}" 
+                         class="blog_feed__element__header-im" />
+
+                    <div class="blog_feed__element__header-title_block">
+                        <h2 class="title-h2 blog_feed__element__header-title_block-title">
+                          ${item.title}
+                        </h2>
+
+                        <button class="default-button blog_feed__element__header-title_block__button" 
+                                data-post-id="${item.id}">
+                          read
+                        </button>
+                    </div>
+
+                </div>
+
+                <p class="paragraph blog_feed__element-text">
+                    ${item.excerpt ?? ""}
+                </p>
+            </div>
+        `
+        );
+    });
+}
+
+async function initBlog() {
+    try {
+        const posts = await loadPosts();
+        renderPosts(posts);
+    } catch (err) {
+        console.error("Ошибка загрузки постов:", err);
+    }
+}
+
+initBlog();

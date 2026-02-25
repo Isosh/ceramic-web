@@ -1,0 +1,40 @@
+@use "../base/variables.scss" as *;
+
+$tablet: 767px;
+$desktop: 1199px;
+$large: 1900px;
+
+.history{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 20px;
+  margin: auto;
+  &__img{
+    width: 600px;
+    margin: auto;
+  }
+  &__text{
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  @media (min-width: $tablet) {
+    max-width: 720px;
+  }
+  @media (min-width: $desktop) {
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1140px;
+    &__content{
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+   @media (min-width: $large) {
+    max-width: 1440px;
+  }
+}
+

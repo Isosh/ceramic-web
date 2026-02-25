@@ -1,0 +1,183 @@
+$tablet: 767px;
+$desktop: 1199px;
+$large: 1850px;
+
+@keyframes slide-from {
+  from {
+    transform: translateX(300%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.promo {
+  padding-top: 50px;
+  
+  &__title {
+    margin-block-start: 50px;
+    padding-inline: 5px;
+  }
+  
+  &__img {
+    margin: 40px auto 0 auto;
+    
+    @media (min-width: $tablet) {
+      width: 230px;
+      height: 321px;
+    }
+
+    @media (min-width: $large) {
+      width: 330px;
+      height: 460px;
+    }
+  }
+  
+  &__btn {
+    margin: 18px auto 0 auto;
+
+    @media (min-width: $large) {
+      width: 330px;
+      height: 60px;
+    }
+  }
+  
+  &__menu {
+    display: none;
+    
+    @media (min-width: $tablet) {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding-top: 20px;
+    }
+
+    @media (min-width: $large) {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding-top: 36px;
+    }
+
+  }
+  
+  &__link {
+    @media (min-width: $tablet) {
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 20px;
+      text-decoration: none;
+      color: #232323;
+    }
+  }
+  
+  &__big {
+    display: none;
+    position: absolute;
+    
+
+    @media (min-width: $desktop) {
+      display: flex;
+      width: 450px;
+      height: 633px;
+    }
+    
+    @media (min-width: $large) {
+      width: 640px;
+      height: 900px;
+    }
+  }
+  
+  &__im-btn {
+    animation: slide-from 2s ease 0ms forwards;
+
+    @media (min-width: $large) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+  
+  &__content {
+
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    
+
+    @media (min-width: $desktop) {
+      justify-content: flex-end;
+      gap: 4em;
+    }
+    
+    @media (min-width: $large) {
+      padding-right: 0;
+      justify-content: right;
+      height: 700px;
+      gap: 4em;
+    }
+  }
+
+  &__swiper {
+    width: 340px;
+  	height: 300px;
+    @media (min-width: $tablet) {
+    width: 400px;
+		height: 355px;
+    }
+
+    @media (min-width: $desktop) {
+    width: 1100px;
+		height: 388px;
+    }
+    
+    @media (min-width: $large) {
+    width: 1355px;
+		height: 423px;
+    }
+  }
+  
+  &__container {
+
+    @media (min-width: $desktop) {
+      padding-top: 50px;
+    }
+    
+  
+    @media (min-width: $large) {
+      padding-right: 10em;
+      padding-left: 10em;
+    }
+  }
+  
+  @media (min-width: $desktop) {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  h1 {
+    @media (min-width: $tablet) {
+      text-align: left;
+      align-content: end;
+      padding: 3em 0;
+      width: 329px;
+    }
+
+    @media (min-width: $desktop) {
+      width: 329px;
+    }
+ 
+    @media (min-width: $large) {
+    }
+  }
+  
+  &__title {
+    @media (min-width: $large) {
+      width: 438px;
+    }
+  }
+}
+

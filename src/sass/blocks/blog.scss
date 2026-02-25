@@ -1,0 +1,180 @@
+@use "../base/variables.scss" as *;
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+   &__title{
+    padding: 1em;
+    font-size: 32px;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+   }
+}
+
+.blog_feed {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  &__element {
+    margin-left: 40px;
+    width: 340px;
+    border: 1px solid $dark;
+    box-shadow: 3px 3px 6px $dark;
+    background-color: white;
+    margin-bottom: 30px;
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      gap: 30px;
+
+      &-im {
+        width: 340px;
+        height: 240px;
+        object-fit: cover;
+      }
+
+      &-title_block {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+
+        &-title {
+          margin-bottom: 20px;
+          font-size: 24px;
+        }
+
+        &__button {
+          width: 145px;
+          height: 40px;  /* Увеличение высоты для читаемости */
+          font-size: 14px;
+          font-weight: 700; /* Жирный шрифт для заголовка */
+          text-transform: uppercase; /* Капслок */
+          background-color: transparent;
+          border: 2px solid #232323; /* Жесткая рамка */
+          color: #232323;  /* Черный цвет текста */
+          cursor: pointer;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          &:hover {
+            background-color: $dark;
+            color: white; /* Цвет текста на ховер */
+          }
+
+          &:focus {
+            outline: none; /* Убираем фокусное кольцо, если не нужно */
+          }
+        }
+      }
+    }
+
+    &-text {
+      margin: 0 30px 20px 30px;
+      line-height: 1.3;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .blog_feed {
+    &-container {
+      position: relative;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 40px 15px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        width: 200px;
+        height: 200px;
+        background:
+          linear-gradient(to right, $dark 1px, transparent 1px) top right,
+          linear-gradient(to bottom, $dark 1px, transparent 1px) top right,
+          no-repeat;
+      }
+    }
+
+    &__element {
+      width: 670px;
+
+      &__header {
+        flex-direction: row;
+
+        &-im {
+          width: 335px;
+          height: 240px;
+        }
+
+        &-title_block {
+          margin-left: 0;
+          margin-top: 20px;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .blog_feed {
+    &-container {
+      margin-top: 80px;
+      margin-bottom: 0;
+      align-items: flex-start;
+      gap: 50px;
+    }
+
+    &__element {
+      width: 520px;
+
+      &__header {
+        flex-direction: row;
+
+        &-im {
+          width: 260px;
+          height: 240px;
+        }
+
+        &-title_block {
+          margin-left: 0;
+          margin-top: 20px;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .blog_feed {
+    &__element {
+      width: 670px;
+
+      &__header {
+        &-im {
+          width: 335px;
+          height: 240px;
+        }
+      }
+    }
+  }
+}

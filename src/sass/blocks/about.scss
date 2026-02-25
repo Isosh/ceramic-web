@@ -1,0 +1,151 @@
+@use "../base/variables.scss" as *;
+
+$tablet: 767px;
+$desktop: 1199px;
+$large: 1850px;
+
+.about {
+
+    padding: 60px 0;
+
+    @media (min-width: $tablet) {
+    padding: 80px 0;
+    }
+
+    @media (min-width: $large) {
+    padding: 100px 0;
+    }
+
+    &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 15px;
+
+    @media (min-width: $tablet) {
+        max-width: 530px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $desktop) {
+        grid-template-columns: 1fr 1.52fr;
+        max-width: 1140px;
+        gap: 20px;
+    }
+
+    @media (min-width: $large) {
+        max-width: 1440px;
+        gap: 20px;
+    }
+    }
+
+    &__item {
+    display: flex;
+    flex-direction: column;
+    }
+
+    &__h2title {
+    font-weight: 500;
+    font-size: 32px;
+    margin: 0 auto 20px;
+    padding: 0 15px;
+    max-width: 530px; 
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: $tablet)  { max-width: 530px; }
+    @media (min-width: $desktop) { max-width: 1140px; }
+    @media (min-width: $large)   { max-width: 1440px; }
+
+    }
+    &__h3title {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 25px;
+
+    @media (min-width: $tablet) {
+        margin-bottom: 30px;
+    }
+    }
+
+    &__img-1 {
+    padding: 10px 0;
+
+    @media (min-width: $tablet) {
+        width: 530px;
+        height: 304px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 436px;
+        height: 250px;
+    }
+
+    @media (min-width: $large) {
+        width: 556px;
+        height: 320px;
+    }
+    }
+
+
+    &__img-2 {
+    padding: 10px 0;
+
+    @media (min-width: $tablet) {
+        width: 530px;
+        height: 200px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 664px;
+        height: 250px;
+    }
+
+    @media (min-width: $large) {
+        width: 844px;
+        height: 320px;
+    }
+    }
+
+    &__workshoptext {
+        font-weight: 400;
+        font-style: initial;
+        font-size: 16px;
+        @media (min-width: $tablet) {
+        width: 530px;
+        font-size: 20px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 556px;
+    }
+    }
+
+    &__storetext {
+        font-weight: 400;
+        font-style: initial;
+        font-size: 16px;
+
+        @media (min-width: $tablet) {
+        width: 530px;
+        font-size: 20px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 436px;
+    }
+
+    @media (min-width: $large) {
+        width: 556px;
+    }
+    }
+
+    &__text__span {
+    font-weight: 500;
+      font-style: normal;
+      color: $ceramic;
+    }
+}
