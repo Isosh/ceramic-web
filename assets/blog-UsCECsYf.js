@@ -1,4 +1,4 @@
-import"./script-BIQny1eC.js";const n="https://ceramic-api.onrender.com";async function l(){const e=`${n}/api/posts`;return(await fetch(e,{headers:{Accept:"application/json"}})).json()}function a(e){const o=document.querySelector(".blog_feed-container");o&&(o.innerHTML="",e.forEach(t=>{o.insertAdjacentHTML("beforeend",`
+import"./script-DZ_rZEzv.js";const n="https://ceramic-api.onrender.com";async function l(){const e=`${n}/api/posts`;return(await fetch(e,{headers:{Accept:"application/json"}})).json()}function a(e){const o=document.querySelector(".blog_feed-container");o&&(o.innerHTML="",e.forEach(t=>{o.insertAdjacentHTML("beforeend",`
             <div class="blog_feed__element">
                 <div class="blog_feed__element__header">
 
