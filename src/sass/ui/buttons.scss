@@ -1,4 +1,4 @@
-@use "/src/sass/base/mixins.scss" as *;
+@use "../base/mixins.scss" as *;
 
 .btn-default {
 	@include button;
